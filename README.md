@@ -1,6 +1,13 @@
 # awsglue-dev
 Development environment with Apache Spark and AWS Glue libraries
 
+Includes:
+- JDK8
+- Apache Spark 2.2.1
+- AWS Glue python and java libraries
+- MySQL JDBC driver 8.0.11
+- MSSQL JDBC driver 4.2
+
 ## Build
 `$ docker build --squash -t awsglue .`
 
