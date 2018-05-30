@@ -8,7 +8,12 @@ RUN	curl -LO http://ftp.itu.edu.tr/Mirror/Apache/spark/spark-2.2.1/spark-2.2.1-b
 	curl -LO https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.11.tar.gz && \
 	tar xf mysql-connector-java-8.0.11.tar.gz && \
 	cp mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar /opt/spark-2.2.1-bin-hadoop2.7/jars/ && \
-	rm -fr mysql-connector-java-8.0.11 mysql-connector-java-8.0.11.tar.gz
+	rm -fr mysql-connector-java-8.0.11 mysql-connector-java-8.0.11.tar.gz && \
+	curl -LO http://ftp.itu.edu.tr/Mirror/Apache/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz && \
+	tar xf hadoop-2.7.6.tar.gz && \
+	cp hadoop-2.7.6/share/hadoop/tools/lib/hadoop-aws-2.7.6.jar /opt/spark-2.2.1-bin-hadoop2.7/jars/ && \
+	cp hadoop-2.7.6/share/hadoop/tools/lib/aws-java-sdk-1.7.4.jar /opt/spark-2.2.1-bin-hadoop2.7/jars/ && \
+	rm -fr hadoop-2.7.6 hadoop-2.7.6.tar.gz
 ADD	libs/sqljdbc42.jar /opt/spark-2.2.1-bin-hadoop2.7/jars
 ADD	pythonrc /root/.pythonrc
 RUN	chmod 755 /root/.pythonrc

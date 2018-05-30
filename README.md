@@ -7,6 +7,7 @@ Includes:
 - AWS Glue python and java libraries
 - MySQL JDBC driver 8.0.11
 - MSSQL JDBC driver 4.2
+- AWS SDK 1.7.4
 
 ## Build
 `$ docker build --squash -t awsglue .`
