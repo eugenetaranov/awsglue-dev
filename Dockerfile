@@ -18,4 +18,5 @@ ADD	libs/sqljdbc42.jar /opt/spark-2.2.1-bin-hadoop2.7/jars
 ADD	pythonrc /root/.pythonrc
 RUN	chmod 755 /root/.pythonrc
 ENV	PYTHONSTARTUP=/root/.pythonrc
+ENV	PYTHONIOENCODING=utf8
 CMD	/opt/spark-2.2.1-bin-hadoop2.7/bin/pyspark --py-files /PyGlue.zip
