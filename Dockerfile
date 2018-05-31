@@ -24,10 +24,10 @@ USER	spark
 RUN	mkdir -p /home/spark/.local/share/jupyter/kernels/spark && \
 	jupyter contrib nbextension install --user && \
 	jupyter nbextensions_configurator enable --user
-COPY	--chown=root:root libs/sqljdbc42.jar /opt/spark/jars
-COPY	--chown=root:root pythonrc /home/spark/.pythonrc
-COPY	--chown=spark:spark kernel.json /home/spark/.local/share/jupyter/kernels/spark/kernel.json
-COPY	--chown=spark:spark start.sh /
+COPY	libs/sqljdbc42.jar /opt/spark/jars
+COPY	pythonrc /home/spark/.pythonrc
+COPY	kernel.json /home/spark/.local/share/jupyter/kernels/spark/kernel.json
+COPY	start.sh /
 ENV	PYTHONSTARTUP=/home/spark/.pythonrc
 ENV	PYTHONIOENCODING=utf8
 EXPOSE	8888
