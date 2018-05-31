@@ -17,10 +17,13 @@ RUN	curl -LO http://ftp.itu.edu.tr/Mirror/Apache/spark/spark-2.2.1/spark-2.2.1-b
 	rm -fr hadoop-2.7.6 hadoop-2.7.6.tar.gz
 RUN	yum install -y epel-release && yum clean all && \
 	yum install -y python-devel gcc python2-pip && \
-	pip install jupyter
+	pip install 'ipython<6.0' && \
+	pip install jupyter jupyterthemes jupyter_contrib_nbextensions jupyter_contrib_nbextensions
 RUN	useradd spark
 USER	spark
-RUN	mkdir -p /home/spark/.local/share/jupyter/kernels/spark
+RUN	mkdir -p /home/spark/.local/share/jupyter/kernels/spark && \
+	jupyter contrib nbextension install --user && \
+	jupyter nbextensions_configurator enable --user
 COPY	--chown=root:root libs/sqljdbc42.jar /opt/spark/jars
 COPY	--chown=root:root pythonrc /home/spark/.pythonrc
 COPY	--chown=spark:spark kernel.json /home/spark/.local/share/jupyter/kernels/spark/kernel.json

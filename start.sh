@@ -11,6 +11,7 @@ function jupyter {
 
 case "$1" in
   "jupyter")
+    jt -t grade3 -cellw 85%
     jupyter
     ;;
   "pyspark")
