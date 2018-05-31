@@ -17,15 +17,16 @@ RUN	curl -LO http://ftp.itu.edu.tr/Mirror/Apache/spark/spark-2.2.1/spark-2.2.1-b
 	rm -fr hadoop-2.7.6 hadoop-2.7.6.tar.gz
 RUN	yum install -y epel-release && yum clean all && \
 	yum install -y python-devel gcc python2-pip && \
-	pip install jupyter && \
-	mkdir -p /root/.local/share/jupyter/kernels/spark
-ADD	libs/sqljdbc42.jar /opt/spark/jars
-ADD	pythonrc /root/.pythonrc
-ADD	kernel.json /root/.local/share/jupyter/kernels/spark/kernel.json
-ADD	start.sh /
-RUN	chmod 755 /root/.pythonrc
-ENV	PYTHONSTARTUP=/root/.pythonrc
+	pip install jupyter
+RUN	useradd spark
+USER	spark
+RUN	mkdir -p /home/spark/.local/share/jupyter/kernels/spark
+COPY	--chown=root:root libs/sqljdbc42.jar /opt/spark/jars
+COPY	--chown=root:root pythonrc /home/spark/.pythonrc
+COPY	--chown=spark:spark kernel.json /home/spark/.local/share/jupyter/kernels/spark/kernel.json
+COPY	--chown=spark:spark start.sh /
+ENV	PYTHONSTARTUP=/home/spark/.pythonrc
 ENV	PYTHONIOENCODING=utf8
 EXPOSE	8888
-WORKDIR	/root
+WORKDIR	/home/spark
 ENTRYPOINT ["/bin/bash", "/start.sh"]
