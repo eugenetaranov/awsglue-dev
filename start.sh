@@ -11,7 +11,7 @@ function jupyter {
 
 case "$1" in
   "jupyter")
-    jt -t grade3 -cellw 85%
+    jt -t grade3 -f roboto -fs 9 -nfs 9 -cellw 95%
     jupyter
     ;;
   "pyspark")
