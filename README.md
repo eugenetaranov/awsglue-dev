@@ -13,9 +13,14 @@ Includes:
 ## Build
 `$ docker build --squash -t awsglue .`
 
+## Pull
+
+`docker pull eugenetaranov/awsglue-dev` - jupyter
+`docker pull eugenetaranov/awsglue-dev:jupyter-custom` - jupyter with jupyter-themes
+
 ## Run
 ```
-$ docker run --rm -it awsglue
+$ docker run --rm -it eugenetaranov/awsglue-dev
 Python 2.7.5 (default, Aug  4 2017, 00:39:18)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
