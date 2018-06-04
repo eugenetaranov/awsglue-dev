@@ -16,11 +16,12 @@ Includes:
 ## Pull
 
 - `docker pull eugenetaranov/awsglue-dev` - jupyter
-- `docker pull eugenetaranov/awsglue-dev:jupyter-custom` - jupyter with jupyter-themes
 
 ## Run
-```
-$ docker run --rm -it eugenetaranov/awsglue-dev
+
+#### Pyspark:
+````
+$ docker run --rm -it eugenetaranov/awsglue-dev pyspark
 Python 2.7.5 (default, Aug  4 2017, 00:39:18)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
@@ -49,3 +50,22 @@ SparkSession available as 'spark'.
 >>> mssql_df = spark.read.format('jdbc').options(url=url, dbtable='TABLENAME').load()
 >>> mssql_df.count()
 ```
+
+#### Jupyter:
+````
+docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
+[I 09:28:28.060 NotebookApp] Writing notebook server cookie secret to /home/spark/.local/share/jupyter/runtime/notebook_cookie_secret
+[W 09:28:28.242 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 09:28:28.267 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.0
+[I 09:28:28.268 NotebookApp] Serving notebooks from local directory: /home/spark
+[I 09:28:28.268 NotebookApp] 0 active kernels
+[I 09:28:28.268 NotebookApp] The Jupyter Notebook is running at:
+[I 09:28:28.269 NotebookApp] http://a616d61b189e:8888/?token=0199c11f58db2581b6901b51e5d3d74bd2b257b8b407f165
+[I 09:28:28.269 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 09:28:28.270 NotebookApp] No web browser found: could not locate runnable browser.
+[C 09:28:28.270 NotebookApp]
+
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://a616d61b189e:8888/?token=0199c11f58db2581b6901b51e5d3d74bd2b257b8b407f165&token=0199c11f58db2581b6901b51e5d3d74bd2b257b8b407f165
+````
