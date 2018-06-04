@@ -15,8 +15,8 @@ Includes:
 
 ## Pull
 
-`docker pull eugenetaranov/awsglue-dev` - jupyter
-`docker pull eugenetaranov/awsglue-dev:jupyter-custom` - jupyter with jupyter-themes
+- `docker pull eugenetaranov/awsglue-dev` - jupyter
+- `docker pull eugenetaranov/awsglue-dev:jupyter-custom` - jupyter with jupyter-themes
 
 ## Run
 ```

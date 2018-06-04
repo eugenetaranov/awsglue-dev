@@ -18,7 +18,7 @@ RUN	curl -LO http://ftp.itu.edu.tr/Mirror/Apache/spark/spark-2.2.1/spark-2.2.1-b
 RUN	yum install -y epel-release && yum clean all && \
 	yum install -y python-devel gcc python2-pip && \
 	pip install 'ipython<6.0' && \
-	pip install jupyter jupyter_contrib_nbextensions jupyter_contrib_nbextensions && \
+	pip install jupyter jupyterthemes jupyter_contrib_nbextensions jupyter_contrib_nbextensions && \
 	pip install boto3 botocore awscli
 RUN	useradd spark
 USER	spark
