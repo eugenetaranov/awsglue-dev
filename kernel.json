@@ -10,7 +10,7 @@
   ],
   "env": {
     "SPARK_HOME": "/opt/spark",
-    "PYTHONPATH": "/opt/spark/python/:/opt/spark/python/lib/py4j-0.10.4-src.zip:/PyGlue.zip",
+    "PYTHONPATH": "/opt/spark/python/:/opt/spark/python/lib/py4j-0.10.4-src.zip:/PyGlue.zip:/opt/python-libs",
     "PYTHONSTARTUP": "/opt/spark/python/pyspark/shell.py",
     "PYSPARK_SUBMIT_ARGS": "--master local[*] --driver-memory 3g --executor-memory 2g pyspark-shell",
     "PYSPARK_PYTHON": "/usr/bin/python"
