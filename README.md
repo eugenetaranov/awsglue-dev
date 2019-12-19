@@ -20,6 +20,7 @@ Includes:
 ## Run
 
 #### Pyspark:
+
 ````
 $ docker run --rm -it eugenetaranov/awsglue-dev pyspark
 Python 2.7.5 (default, Aug  4 2017, 00:39:18)
@@ -52,6 +53,7 @@ SparkSession available as 'spark'.
 ```
 
 #### Jupyter:
+
 ````
 docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
 [I 09:28:28.060 NotebookApp] Writing notebook server cookie secret to /home/spark/.local/share/jupyter/runtime/notebook_cookie_secret
