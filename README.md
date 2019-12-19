@@ -16,7 +16,7 @@ Includes:
 
 ## Pull
 
-`docker pull eugenetaranov/awsglue-dev` - jupyter
+`docker pull eugenetaranov/awsglue-dev` - jupyter` 
 
 ## Run
 
