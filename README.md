@@ -12,11 +12,12 @@ Includes:
 - Jupyter 4.4.0
 
 ## Build
+
 `$ docker build --squash -t awsglue .`
 
 ## Pull
 
-`docker pull eugenetaranov/awsglue-dev` - jupyter` 
+`docker pull eugenetaranov/awsglue-dev - jupyter` 
 
 ## Run
 
@@ -56,7 +57,7 @@ SparkSession available as 'spark'.
 #### Jupyter:
 
 ```
-docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
+$ docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
 [I 09:28:28.060 NotebookApp] Writing notebook server cookie secret to /home/spark/.local/share/jupyter/runtime/notebook_cookie_secret
 [W 09:28:28.242 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
 [I 09:28:28.267 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.0
