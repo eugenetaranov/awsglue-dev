@@ -1,4 +1,5 @@
 # awsglue-dev
+
 Development environment with Apache Spark and AWS Glue libraries
 
 Includes:
@@ -11,16 +12,18 @@ Includes:
 - Jupyter 4.4.0
 
 ## Build
+
 `$ docker build --squash -t awsglue .`
 
 ## Pull
 
-- `docker pull eugenetaranov/awsglue-dev` - jupyter
+`docker pull eugenetaranov/awsglue-dev - jupyter` 
 
 ## Run
 
 #### Pyspark:
-````
+
+```
 $ docker run --rm -it eugenetaranov/awsglue-dev pyspark
 Python 2.7.5 (default, Aug  4 2017, 00:39:18)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)] on linux2
@@ -52,8 +55,9 @@ SparkSession available as 'spark'.
 ```
 
 #### Jupyter:
-````
-docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
+
+```
+$ docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -p 8888:8888 eugenetaranov/awsglue-dev jupyter
 [I 09:28:28.060 NotebookApp] Writing notebook server cookie secret to /home/spark/.local/share/jupyter/runtime/notebook_cookie_secret
 [W 09:28:28.242 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
 [I 09:28:28.267 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.0
@@ -68,4 +72,4 @@ docker run -ti --rm -v $PWD:/mnt -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_
     Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
         http://a616d61b189e:8888/?token=0199c11f58db2581b6901b51e5d3d74bd2b257b8b407f165&token=0199c11f58db2581b6901b51e5d3d74bd2b257b8b407f165
-````
+```
